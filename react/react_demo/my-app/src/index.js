@@ -1,17 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
+const name = "react study"
+const isAlert = false
+function alertName() {
+  return name + name
+}
+const jsx = (
+<div>hello{isAlert?alertName():'错误'}</div>
+)
+const jsx1 = (
+  <div>
+    {/* 数组 */}
+    <ul>
+      {
+        [1,2,3].map(item=>{
+           return <li style={{background:'red'}}>{item}</li>
+        })
+      }
+    </ul>
+  </div>
+)
+const obj = (<div>{jsx}{jsx1}</div>)
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  obj,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
